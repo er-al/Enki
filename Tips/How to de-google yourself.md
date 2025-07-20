@@ -5,7 +5,7 @@ Steps includes:
 2. Google Payments and Subscriptions
 3. Goole Third Party Services you signed up
 4. Removing google email from social media platforms
-5. TBA
+5. Download backup data
 
 ## 1. Google Drive
 - Visit google drive, check if you have important photos, then download them locally or transfer to another cloud provider.
@@ -30,7 +30,11 @@ Steps includes:
 - Or you can entirely delete your social media account.
   
 
-## 5. Further steps will be added for clean up.
+## 5. Download backup data
+- Before deleting your entire google account, you can choose to backup/download your current data.
+
+## 6. Delete entire google account
+- To delete your Google account, navigate to your Google Account settings, specifically the "Data & Privacy" section, and then select "Delete your Google Account." 
 
 
 
