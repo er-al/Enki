@@ -1,5 +1,9 @@
 import './App.css';
 
+const unused = () => {
+  
+}
+
 const App = () => {
   return (
     <div className="content">
