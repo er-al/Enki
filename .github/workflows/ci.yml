@@ -9,8 +9,6 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
-
-
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -32,25 +30,19 @@ jobs:
   style:
     name: Style
     runs-on: ubuntu-latest
-
     steps:
-            tests:
-        name: Style
-        runs-on: ubuntu-latest
-    
-        steps:
-          - name: Check out code
-            uses: actions/checkout@v4
-          
-          - name: Set up Node
-            uses: actions/setup-node@v4
-            with:
-              node-version: 20
-    
-          - name: Install dependencies
-            working-directory: ./app
-            run: npm ci
-    
-          - name: Check and fix formatting
-            working-directory: ./app
-            run: npm run format
+      - name: Check out code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: ./app
+        run: npm ci
+
+      - name: Check and fix formatting
+        working-directory: ./app
+        run: npm run format
