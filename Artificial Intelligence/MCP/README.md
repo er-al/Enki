@@ -11,4 +11,5 @@
 2. Streamable HTTP (SSE) - Used in production. It sends HTTP POST requests from the client to server, and uses Server-Sent Events to stream back responses.
 
 
+# Building MCP Server
 
