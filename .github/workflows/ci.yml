@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  pull_requests:
+    branches: [main]
+
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Force Failure
+        run: (exit 1)
