@@ -9,7 +9,9 @@
     "dev": "rsbuild dev --open",
     "format": "biome format --write",
     "preview": "rsbuild preview",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "pre-commit": "biome check --write --no-errors-on-unmatched",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^19.1.1",
