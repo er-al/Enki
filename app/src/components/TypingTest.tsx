@@ -188,6 +188,31 @@ const TypingTest: React.FC = () => {
     }
   }, [isFinished]);
 
+  // Scroll active word into view
+  useEffect(() => {
+    if (!wordDisplayRef.current) return;
+
+    // Find the active word element
+    const activeWordElement = wordDisplayRef.current.children[
+      currentWordIndex
+    ] as HTMLElement;
+
+    if (activeWordElement) {
+      const container = wordDisplayRef.current;
+      const wordTop = activeWordElement.offsetTop;
+      const wordHeight = activeWordElement.offsetHeight;
+      const containerHeight = container.clientHeight;
+      
+      // Calculate target scroll position to center the word
+      const targetScroll = wordTop - containerHeight / 2 + wordHeight / 2;
+
+      container.scrollTo({
+        top: Math.max(0, targetScroll),
+        behavior: 'smooth',
+      });
+    }
+  }, [currentWordIndex]);
+
   const startTest = () => {
     setIsActive(true);
     setIsFinished(false);
@@ -296,12 +321,6 @@ const TypingTest: React.FC = () => {
           >
             {wordList.map((wordObj, index) => {
               const word = wordObj.word;
-              // Only show a window of words around current index to avoid rendering performance issues
-              if (
-                index < currentWordIndex - 20 ||
-                index > currentWordIndex + 40
-              )
-                return null;
 
               let wordClasses = 'word';
               let renderedContent: React.ReactNode = word;
