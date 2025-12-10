@@ -202,7 +202,7 @@ const TypingTest: React.FC = () => {
       const wordTop = activeWordElement.offsetTop;
       const wordHeight = activeWordElement.offsetHeight;
       const containerHeight = container.clientHeight;
-      
+
       // Calculate target scroll position to center the word
       const targetScroll = wordTop - containerHeight / 2 + wordHeight / 2;
 
