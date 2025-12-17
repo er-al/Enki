@@ -94,3 +94,82 @@ const messages = [
     }
 ]
 ```
+
+
+<br>
+### Pros of Few Shot
+- More control over style of output
+
+### Cons of Few Shot
+- More expensive
+- Less performant
+
+
+<br>
+
+### Adding Example
+-<your prompt> + Use the examples provided provided between the "```"
+
+
+### Stop Sequence
+- Finished what it wanted to do
+- Ran out of token
+- Encountered a stop sequence
+<br>
+- An array with up to 4 stop sequences 
+- The model stop generating when it tries to produce a stop sequence
+- The outputted text will not include  a stop sequence
+
+<br>
+
+### Frequency and Presence Penalty
+- Offer some control how repetitive our output is.
+
+
+### Presence Penalty
+- Number from -2 to 2, defaults to 0
+- Higher numbers increases a models likelihood of talking about new topics
+
+
+### Frequency Penalty
+- Number from -2 to 2 , defaults to 0
+- Higher numbers it decreases the model's likelihood of repeating the exact same phrase.
+
+
+### Fine-tuning
+- Check docs for implementation:  [Openai Docs](https://platform.openai.com/docs/api-reference/fine-tuning/create)
+- Giving a standard, pre-trained model a specific data set to enhance it's performance on a particular task.
+
+- What are the use-cases?
+  - Tone and style - teach the model how you want it to respond
+  - Format - such as JSON data
+  - Function calling - can be improved by fine-tuning
+
+
+
+<br>
+- "Fine-tuning is a last resort"
+1. Work on prompt-design
+2. Adjust settings e.g. temperature
+3. Use few-shot approach
+4. Fine-tune
+
+- Fine tuning needs plenty of data.
+- at least 50 items (more is better - within reason)
+- human checked
+- JSONL format
+
+
+<br>
+<hr>
+
+## AI Security
+- Misuse - deepfakes,fake news, prompt injections
+- Accidental
+
+### Prompt Injections
+
+
+### Safety Best Practices
+- https://platform.openai.com/docs/guides/safety-best-practices
+
