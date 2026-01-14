@@ -1,112 +1,90 @@
-# Variables
- - declarations, walrus operator
+# Go Quick Reference
 
-# Comments
- - single line, multi line
-
-# Compilation Process
- - code -> compiler -> exe
- - Errors - compilation errors, runtime errors
-
-# Type Sizes
- - uint uint8 uint16 uint32 uint64 uintptr
-
- - float32 float64
- 
- - complex64 complex128 
-
- - When should I use a more specific type? - When super concerned about performance and memory usage.
-
-# Type Inference
- - auto typing based on value
-
-# Same Line Directions
- - age, name  := 10, "Smith"
-
-# Go runtime
- - purpose is to clean up unused memory at runtime
- - includes a garbage collector that automatically frees up memory that's no longer in use.
-
-# Constants
- - const pi = 3.14
-
-# String Formattings
- - fmt.Printf -> prints
- - fmt.Sprintf -> returns
-
-
-# Runes and String Encoding
- - a "character" is a single byte (8 bits) 
- - using ASCII encoding we can represent 128 characters with 7bits
- - Go strings are sequences of bytes, but Go has special type 'rune' which is an alias for int32. Means that a rune is a 32-bit integer (4 bytes), which is a large enought o hold any Unicode point.
- - when working with strings you need to be aware of the encoding (bytes -> representation). Go uses UTF-8 encoding which is a variable-length encoding.
-
-# What does this mean?
- - There are 2 main reason:
- - 1. When you need to work with every characters in a string, you should use a "rune" type. It breaks strings up into their individual characters, which can be more than one byte long.
- - 2. We can include a wide variety of Unicode characters in our strings like emojis and Chinese characters and it will be fine.
-
-
-<br>
-<hr>
-
-# Conditionals
- 
-<br>
-<hr>
-
-# Functions
-
-<br>
-<hr>
-
-# Structs
- - represents structured data
-
-
- ```go
-   type car struct {
-      brand string
-      color string  
-
-   } 
-
- ```
-
-
-<br>
-<hr>
-# Interfaces
-
-<br>
-<hr>
-# Errors
-
-
-<br>
-<hr>
-
-# Loops
-
-<br>
-<hr>
-# Slices
-
-- Arrays are:
-- fixed-size groups of variables of the same type
-```
- nums := [3]int{1,2,3}	
+## Variables
+```go
+var name string = "Eric"   // explicit type
+age := 25                  // short declaration
+x, y := 1, 2               // same line
 ```
 
-<br>
-<hr>
+## Types
+| Type | Description |
+|------|-------------|
+| `bool` | true/false |
+| `string` | text |
+| `int` | integers |
+| `float64` | decimals |
+| `byte` | alias for uint8 |
+| `rune` | alias for int32 (Unicode) |
 
-# Maps
-# Pointers
-# Packages and Modules
-# Channels
-# Mutexes
-# Generics 
-# Enums
+## Comments
+```go
+// single line
+/* multi line */
+```
 
+## Constants
+```go
+const pi = 3.14159
+```
 
+## String Formatting
+```go
+fmt.Printf("%s", "hello")   // string
+fmt.Printf("%d", 42)        // integer
+fmt.Printf("%f", 3.14)      // float
+fmt.Printf("%v", anything)  // default format
+```
+
+## Structs
+```go
+type car struct {
+    brand string
+    color string
+}
+```
+
+## Slices
+```go
+nums := []int{1, 2, 3}
+nums = append(nums, 4)
+```
+
+## Maps
+```go
+m := map[string]int{"a": 1, "b": 2}
+```
+
+## Control Flow
+```go
+if x > 0 { }
+switch x { case 1: }
+for i := 0; i < 10; i++ { }
+for _, v := range slice { }
+```
+
+## Functions
+```go
+func add(a, b int) int {
+    return a + b
+}
+```
+
+## Errors
+```go
+if err != nil {
+    return err
+}
+```
+
+## Goroutines
+```go
+go doSomething()
+```
+
+## Channels
+```go
+ch := make(chan int)
+ch <- 42       // send
+val := <-ch    // receive
+```
